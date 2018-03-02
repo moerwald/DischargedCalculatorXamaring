@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewModels="clr-namespace:Calculator.ViewModels"
+             x:Class="Calculator.Views.PersonDetails">
+
+    <ContentPage.BindingContext>
+        <viewModels:PersonDetailsViewModel />
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout Margin="5,20,0,0" >
+
+                <Label Text="Vorname" />
+                <Entry Text="{Binding FirstName}" />
+                <Label Text="Nachname" />
+                <Entry Text="{Binding LastName}" />
+                <Label Text="Addresse" />
+                <Entry Text="{Binding Address}"/>
+                <Label Text="Wohnort" />
+                <Entry Text="{Binding City}"/>
+                <Label Text="PLZ" />
+                <Entry Text="{Binding ZipCode}"/>
+
+                <Label Text="Geburtstag" />
+                <DatePicker Date="{Binding Birthday}"/>
+
+
+                <Label Text="Einkommen (brutto)" />
+                <Entry Text="{Binding IncomeBeforeTax}" />
+
+                <Button Command="{Binding Commands[CalculateIncome] }" Text="Berechnen"/>
+
+
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>
